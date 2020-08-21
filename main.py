@@ -2,7 +2,7 @@ import pygame
 from player import *
 
 
-def main():
+def main(*args, **kwargs):
     win = pygame.display.set_mode((800, 600))
     clock = pygame.time.Clock()
     player = Player()
