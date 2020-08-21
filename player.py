@@ -13,6 +13,9 @@ class Player(pygame.sprite.Sprite):
     def __str__(self):
         return 'Player Sprite'
 
+    def draw(self):
+        print('ye')
+
     def update(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
