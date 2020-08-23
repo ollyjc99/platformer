@@ -1,4 +1,5 @@
 import pygame
+from random import randint
 from player import *
 from ground import *
 
@@ -7,9 +8,12 @@ def main(*args, **kwargs):
     win = pygame.display.set_mode((800, 600), 0, 32)
     clock = pygame.time.Clock()
     player = Player()
-    surf = pygame.Surface((400, 300))
-    platforms.add(Platform())
+    chunk = Chunk()
+    blocks.add(Block())
     sprites.add(player)
+
+    grid = [[randint(2, 3)] for i in range(8)]
+    print(grid)
 
     running = True
     while running:
@@ -19,12 +23,12 @@ def main(*args, **kwargs):
                 running = False
 
         sprites.update()
-        platforms.update()
+        blocks.update()
 
         win.fill((220, 220, 100))
 
-        platforms.draw(win)
-
+        blocks.draw(win)
+        sprites.draw(win)
         pygame.display.update()
         clock.tick(60)
 
