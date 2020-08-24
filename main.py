@@ -13,7 +13,6 @@ def main(*args, **kwargs):
     sprites.add(player)
 
     grid = [[randint(2, 3)] for i in range(8)]
-    print(grid)
 
     running = True
     while running:
